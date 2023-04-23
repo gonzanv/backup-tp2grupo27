@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraneoMan</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="columnas.css">
-    <link rel="stylesheet" href="Producto.html">
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Contacto</title>
+	</head>
+<body>
+<style>
+table, th, td {
+	  border: 1px solid black
+		}
+		tr{
+		border: 1px solid black
+		}
+</style>
+	<table>
+		<th>
+		<h1>Contáctenos</h1>
+		
+		<p>3915 Av. General Belgrano, 388-4999999</p>
+		<p>Lunes a viernes: 9:00 - 20:00</p>
+		<p>Sabados y domingos: 9:00 - 13:00</p>
+		<p><a>contacto@gmail.com</a></p>
+		
     
-    
-</head>
-<body class="cuerpo">
-    
-    <h2 class="csubtitulo"><a class="barra" href="Incio.html">TerraneoMan</a></h2>
-    <img src="maderas1.jpg" alt="" class="fondoport" >
-<!--Ultima modificacion (Menu)-->    
-    <nav>
-        
-        <button id=miBoton><a class="local" href="Incio.html">Local</a></button>   
-        <button id=miBoton><a class="local" href="Producto.html">Productos</a></button>
-        <button id=miBoton><a class="local" href="Sale.html">SALE</a></button>
-        <button id=miBoton><a class="local" href="Contacto.php">Contacto</a></button>
-    </nav>
-    <h1><a class="subtitle">---Contacto--- </a> <br></h1>
-    <!--Fin modificacion (Menu)--> 
-    <!--Formulario--> 
-   
-    <a class="Inc"><b> Inicie su consulta Aqui: </b></a>
-    <form method="POST" name="formDatosPersonales" class="diseÃ±oform">
-    <p>Nombre y Apellido</p>
-    <input type="text" name="name" placeholder="Nombre completo">
-    <p>Email</p>
-    	<input type="email" name="email" placeholder="Ingrese su email">
-        <p>Ingrese su consulta</p>     
-        
-        <textarea name="mensaje" type="text" rows="10" cols="40" maxlength="200" placeholder="Ingrese su consulta"></textarea>
-    	<input type="submit" name="register">
-	
-    
-    </form>    
-    <?php 
-        include("registrar.php");
-        ?>
+      <label for="nombre">Nombre:</label>
+      <input type="text" ><br>
 
-
-
-     <H3 id="autores"> Â© Autores: Mamani Micol, Quispe Joaquin, Zerpa Agustina</H1>
+      <label for="email">Email:</label>
+      <input type="email"><br>
+     
+      <label for="ciudad">ciudad:</label>
+      <input type="text" ><br>
+      
+		<label for="mensaje">Mensaje:</label>
+<textarea name="mensaje"  rows="5"></textarea><br>
+      <button type="submit">Enviar</button>
+      
+		</th> 
+		
+			
+				
+	</table>
+	<p><a href="Index.html" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
 </body>
 </html>
