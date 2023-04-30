@@ -83,12 +83,13 @@ aside p{
 .pie{
 	display:block;
 	width:100%;
-	text-align:center;
-	position:absolute;
+	text-align:left;
+	position:down;
 	bottom:0;
 	color:white;
 	background-color:black;
 	font-size:14px;
+	
 }
 th{
 	text-align:center;
@@ -102,4 +103,13 @@ th{
 }
 .contenedor-paseos p,.contenedor-paseos h1{
 	padding:7px;
+}
+
+.a {
+  background-color: powderblue;
+  transition: background-color .5s;
+}
+
+a:hover {
+  background-color: gold;
 }
