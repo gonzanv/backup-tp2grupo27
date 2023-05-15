@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-	<html lang="es">
+	<html xmlns:th="http://www.thymeleaf.org" lang="es">		
 		<head>
 			<meta charset="UTF-8">
 			<title>Productos</title>
-			<link href="../static/css/estilos.css" rel="stylesheet"/>
+			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
 		<div class="contenedor-index">
-		<header>
-	    			<h1>Tu tienda y cuidadores de confianza para el bienestar de tu
-					compañero canino: Grupo 27</h1>
-					<p>Tenemos a la venta de productos relacionados con el cuidado y
-					bienestar de las mascotas. Aquí se pueden encontrar alimentos,
-					juguetes, accesorios, productos de higiene, entre otros.</p>
-		</header>
+		<header th:replace="layouts/header :: header"></header>
 		<div class="menu">
 			<nav>
-				<ul>
-					<li><a href="Index.html">Inicio</a></li>
-					<li><a href="productos.html">Productos</a></li>
-					<li><a href="consejosalud.html">Consejos de salud</a></li>
-					<li><a href="paseos.html">Servicio de paseos</a></li>
-					<li><a href="sucursales.html">Sucursales</a></li>
-					<li><a href="contáctenos.html">Contáctanos</a></li>
-				</ul>
-			</nav>
+					<ul>
+						<li><a href="Index">Inicio</a></li>
+						<li><a href="productos">Productos</a></li>
+						<li><a href="consejosalud">Consejos de salud</a></li>
+						<li><a href="paseos">Servicio de paseos</a></li>
+						<li><a href="sucursales">Sucursales</a></li>
+						<li><a href="contáctenos">Contáctanos</a></li>
+					</ul>
+				</nav>
 		</div>
         		<h1> BIENVENIDO A NUESTRA TIENDA DE PRODUCTOS PARA MASCOTAS </h1>
     		<main>
@@ -33,8 +27,8 @@
         		</nav>
         		<section>
         			<h2>BOLSO TRANSPORTADOR LISO MB</h2>
-        			<img src="../static/images/bolso1.jpg" alt="bolso1" width="200" height="200">
-        			<img src="../static/images/bolso2.jpg" alt="bolso2" width="200" height="200">
+        			<img th:src="@{/images/bolso1.jpg}" alt="bolso1" width="200" height="200">
+        			<img th:src="@{/images/bolso2.jpg}" alt="bolso2" width="200" height="200">
             		<h4>Este bolso transportador de mascotas está realizado con materiales resistentes y fáciles de limpiar.</h4>
 					<h4>Posee una red plástica en los extremos que permite una correcta circulación del aire y luz, además de permitir al animal ver hacia el exterior del bolso.</h4> 
 					<h4>El animal se puede ingresar o retirar desde la parte superior o desde una puerta frontal.</h4>
@@ -46,12 +40,12 @@
             		
             		
             		<h2>Corral Hexagonal</h2>
-            		<img src="../static/images/corral.png" alt="corral" width="400" height="500">
+            		<img th:src="@{/images/corral.png}" alt="corral" width="400" height="500">
         			<h4>Corral metálico desarmable de metal.</h4>
 					<h4>Corral diseñado en metal de acero, desarmable con el tamaño de 60x60 cada seccion, almodable al espacio a cubrir.</h4>
         			      			
             		<h2>Bolso Portacan</h2>
-            		<img src="../static/images/can.png" alt="pcan" width="400" height="400">
+            		<img th:src="@{/images/can.png}" alt="pcan" width="400" height="400">
         			<h4>Habitaculo de facil sujecion a asientos de vehiculos para transporte con mascotas, incluye mosqueton para mascota.</h4>
 					<h4>Este bolso transportador de mascotas está realizado con materiales resistentes y fáciles de limpiar.</h4>
 					<h4>Posee una red plástica en los extremos que permite una correcta circulación del aire y luz, además de permitir al animal ver hacia el exterior del bolso.</h4> 
@@ -63,7 +57,7 @@
     		
     		<footer>
         		<h4>Consulte nuestros catalogos online</h4>
-        		<p><a href="Index.html" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+        		<p><a href="Index" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
     		</footer>
 		</body>
 	</html>
