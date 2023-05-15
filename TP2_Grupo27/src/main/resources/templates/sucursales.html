@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-	<html lang="es">
+	<html xmlns:th="http://www.thymeleaf.org" lang="es">
 		<head>
 			<meta charset="UTF-8">
 			<title>Sucursales</title>
-			<link href="../static/css/estilos.css" rel="stylesheet"/>
+			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
 		
 		<div class="contenedor-index">
-		<header>
-	    			<h1>Tu tienda y cuidadores de confianza para el bienestar de tu
-					compañero canino: Grupo 27</h1>
-					<p>Tenemos a la venta de productos relacionados con el cuidado y
-					bienestar de las mascotas. Aquí se pueden encontrar alimentos,
-					juguetes, accesorios, productos de higiene, entre otros.</p>
-		</header>
+		<header th:replace="layouts/header :: header"></header>
 		<div class="menu">
 			<nav>
-				<ul>
-					<li><a href="Index.html">Inicio</a></li>
-					<li><a href="productos.html">Productos</a></li>
-					<li><a href="consejosalud.html">Consejos de salud</a></li>
-					<li><a href="paseos.html">Servicio de paseos</a></li>
-					<li><a href="sucursales.html">Sucursales</a></li>
-					<li><a href="contáctenos.html">Contáctanos</a></li>
-				</ul>
-			</nav>
+					<ul>
+						<li><a href="Index">Inicio</a></li>
+						<li><a href="productos">Productos</a></li>
+						<li><a href="consejosalud">Consejos de salud</a></li>
+						<li><a href="paseos">Servicio de paseos</a></li>
+						<li><a href="sucursales">Sucursales</a></li>
+						<li><a href="contáctenos">Contáctanos</a></li>
+					</ul>
+				</nav>
 		</div>
         		<h1> Sucursal San Salvador de Jujuy. </h1>
     		<main>
@@ -56,7 +50,7 @@
     		<footer>
         		<h4>Para mas informacion contactenos</h4>
     		</footer>
-    			<p><a href="Index.html" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+    			<p><a href="Index" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
 		</body>
 	</html>
 	
