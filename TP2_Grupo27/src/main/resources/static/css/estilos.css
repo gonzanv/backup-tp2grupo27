@@ -3,6 +3,10 @@
 	margin: 0px;
 	padding: 0px;
 }
+html{
+	min-height: 100%;
+	position:relative;
+}
 body{
 	font-family: arial;
 	background-color:#ffffcc;
@@ -68,7 +72,7 @@ section article,article p,.pie p{
 aside{
 	position:absolute;
 	max-width:30%;
-	height:368px;
+	height:375px;
 	display:inline-block;
 	background-color:#ffd24d;
 	padding:10px;
@@ -89,7 +93,7 @@ aside p{
 	color:white;
 	background-color:black;
 	font-size:14px;
-	
+	margin-bottom:-35.5px;
 }
 table {
     padding: 20px;
@@ -103,9 +107,12 @@ th{
 .contenedor-paseos table{
 	background-color:white;
 	margin-left:5px;
+	margin-top:-4px;
+	border-collapse: collapse;
 }
 .contenedor-paseos th{
 	background-color:#b8fffa;
+	padding:2px;
 }
 .contenedor-paseos p,.contenedor-paseos h1{
 	padding:7px;

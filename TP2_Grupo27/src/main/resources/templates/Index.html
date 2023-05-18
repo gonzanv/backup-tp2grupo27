@@ -2,22 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>Inicio</title>
 		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 	</head>
 	<body>
 		<div class="contenedor-index">
-			<header th:replace="layouts/header :: header"></header>
+			<header th:replace="~{layouts/header :: header}"></header>
 			<div class="menu">
 				<nav>
 					<ul>
-						<li><a href="Index">Inicio</a></li>
-						<li><a href="productos">Productos</a></li>
-						<li><a href="consejosalud">Consejos de salud</a></li>
-						<li><a href="paseos">Servicio de paseos</a></li>
-						<li><a href="sucursales">Sucursales</a></li>
-						<li><a href="contáctenos">Contáctanos</a></li>
+						<li><a th:href="@{/Inicio}">Inicio</a></li>
+						<li><a th:href="@{/productos}">Productos</a></li>
+						<li><a th:href="@{/consejosalud}">Consejos de salud</a></li>
+						<li><a th:href="@{/paseos}">Servicio de paseos</a></li>
+						<li><a th:href="@{/sucursales}">Sucursales</a></li>
+						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -66,7 +66,8 @@
 				<p>En esta página web encontrarás consejos prácticos y útiles para entrenar a tu perro y fortalecer el vínculo entre tú y tu mascota. Aprenderás sobre técnicas efectivas de entrenamiento, cómo reforzar comportamientos positivos y corregir conductas no deseadas. Además, te daremos consejos para adaptar el entrenamiento a las necesidades individuales de tu perro y cómo hacerlo de una manera divertida y estimulante para él. Nuestro objetivo es ayudarte a construir una relación más fuerte y saludable con tu compañero canino, mientras trabajas juntos en su educación y bienestar.</p>
 			</aside>
 		
-			<footer th:replace="layouts/footer :: footer"></footer>
+			
 		</div>
 	</body>
+	<footer th:replace="~{layouts/footer :: footer}"></footer>
 </html>
