@@ -6,16 +6,16 @@
 			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
-		<header th:replace="layouts/header :: header"></header>
+		<header th:replace="~{layouts/header :: header}"></header>
 		<div class="menu">
 			<nav>
 					<ul>
-						<li><a href="Index">Inicio</a></li>
-						<li><a href="productos">Productos</a></li>
-						<li><a href="consejosalud">Consejos de salud</a></li>
-						<li><a href="paseos">Servicio de paseos</a></li>
-						<li><a href="sucursales">Sucursales</a></li>
-						<li><a href="contáctenos">Contáctanos</a></li>
+						<li><a th:href="@{/Inicio}">Inicio</a></li>
+						<li><a th:href="@{/productos}">Productos</a></li>
+						<li><a th:href="@{/consejosalud}">Consejos de salud</a></li>
+						<li><a th:href="@{/paseos}">Servicio de paseos</a></li>
+						<li><a th:href="@{/sucursales}">Sucursales</a></li>
+						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
@@ -52,8 +52,9 @@ De esta forma mejorarás el correcto funcionamiento intestinal y cardiovascular,
         		
     		</main>
     		<footer>
-        		<p><a href="Index" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+        		<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
     		</footer>
+    		<footer th:replace="~{layouts/footer :: footer}"></footer>
 		</body>
 	</html>
 	
