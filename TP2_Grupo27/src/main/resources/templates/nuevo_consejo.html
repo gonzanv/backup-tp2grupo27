@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">		
+		<head>
+			<meta charset="UTF-8">
+			<title>Nuevo Consejo</title>
+			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
+		</head>
+		<body>
+			<header th:replace="~{layouts/header :: header}"></header>
+			<div class="menu">
+				<nav>
+					<ul>
+						<li><a th:href="@{/Inicio}">Inicio</a></li>
+						<li><a th:href="@{/productos/listado}">Productos</a></li>
+						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li><a th:href="@{/paseos}">Servicio de paseos</a></li>
+						<li><a th:href="@{/sucursales}">Sucursales</a></li>
+						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+					</ul>
+				</nav>
+			</div>
+			<h2 th:text="${edicion}?'Editar Consejo':'Nuevo Consejo'"></h2>
+			<form th:action="${edicion}?@{/consejosalud/modificar}:@{/consejosalud/guardar}" th:object="${consejo}" method="post">
+				<label for="id">Id</label>
+				<input type="number" id="id" name="consejo_id" th:field="*{id}" readonly><br><br>
+				<label for="titulo">Titulo</label>
+				<input type="text" id="titulo" name="consejo_titulo" th:field="*{titulo}">
+				<label for="descripcion">Descripcion</label>
+				<input type="text" id="descripcion" name="consejo_descripcion" th:field="*{descripcion}" size=50 ><br><br>
+				<label for="imagen">URL de imagen del Consejo</label>
+				<input type="text" id="imagen" name="consejo_imagen" th:field="*{imagen}">
+				<p><input type="submit" class="button" th:value="${edicion}?'Guardar Cambios':'Agregar Consejo'"></p>
+			</form>
+        	<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+    		<footer th:replace="~{layouts/footer :: footer}"></footer>
+		</body>
+</html>

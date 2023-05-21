@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6,img{
 .agregarproducto:hover{
 	background-color:transparent;
 }
-p>a:visited{
+p>a:visited,.consejo a:visited{
 	color:blue;
 }
 .agregarproducto{
@@ -164,5 +164,25 @@ p>a:visited{
 	display:inline;
 	width: 30%;
 	
+}
+
+.contenedor-consejos h1,.contenedor-consejos h2,.contenedor-consejos h3,.subtitulo,.contenedor-consejos h4{
+	text-align:center;
+}
+
+.contenedor-consejos img{
+  display: block;
+  width:500	px;
+  height:500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contenedor-consejos p:not(.subtitulo){
+	text-align:left;
+}
+
+.contenedor-consejos hr{
+	color:grey;
 }
 
