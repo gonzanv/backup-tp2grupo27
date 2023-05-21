@@ -3,6 +3,7 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 html{
 	min-height: 100%;
 	position:relative;
@@ -66,13 +67,15 @@ section{
 article h2{
 	text-decoration: underline;
 }
-section article,article p,.pie p{
+section article,article p,.pie p,p,label{
 	padding:10px;
 }
+
+
 aside{
 	position:absolute;
 	max-width:30%;
-	height:375px;
+	height:40%;
 	display:inline-block;
 	background-color:#ffd24d;
 	padding:10px;
@@ -126,3 +129,40 @@ th{
 a:hover {
   background-color: gold;
 }
+h2,h1{
+	margin:-5px;
+}
+h1,h2,h3,h4,h5,h6,img{
+	margin:5px;
+}
+
+.producto{
+	background:white;
+	border:2px solid black;
+	display:inline-block;
+	margin:20px;
+	text-align:center;
+	margin-right:-8px;
+	padding-bottom:5px;
+}
+
+.agregarproducto:hover{
+	background-color:transparent;
+}
+p>a:visited{
+	color:blue;
+}
+.agregarproducto{
+	color:black;
+}
+.producto img{
+	  width: 300px;
+	  height:300px;
+}
+
+.modificaciones p{
+	display:inline;
+	width: 30%;
+	
+}
+

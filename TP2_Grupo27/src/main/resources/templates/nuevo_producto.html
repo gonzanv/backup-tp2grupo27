@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">		
+		<head>
+			<meta charset="UTF-8">
+			<title>Nuevo Producto</title>
+			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
+		</head>
+		<body>
+			<header th:replace="~{layouts/header :: header}"></header>
+			<div class="menu">
+				<nav>
+					<ul>
+						<li><a th:href="@{/Inicio}">Inicio</a></li>
+						<li><a th:href="@{/productos/listado}">Productos</a></li>
+						<li><a th:href="@{/consejosalud}">Consejos de salud</a></li>
+						<li><a th:href="@{/paseos}">Servicio de paseos</a></li>
+						<li><a th:href="@{/sucursales}">Sucursales</a></li>
+						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+					</ul>
+				</nav>
+			</div>
+			<h2 th:text="${edicion}?'Editar Producto':'Nuevo Producto'"></h2>
+			<form th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${producto}" method="post">
+				<label for="codigo">Codigo</label>
+				<input type="number" id="codigo" name="producto_codigo" th:field="*{codigo}" readonly><br><br>
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="producto_nombre" th:field="*{nombre}">
+				<label for="categoria">Categoria</label>
+				<input type="text" id="categoria" name="producto_categoria" th:field="*{categoria}"><br><br>
+				<label for="precio">Precio</label>
+				<input type="number" step="0.01" id="precio" name="producto_precio" th:field="*{precio}">
+				<label for="descuento">Porcentaje de Descuento</label>
+				<input type="number" id="descuento" name="producto_descuento" th:field="*{descuento}"><br><br>
+				<label for="imagen">URL de imagen del Producto</label>
+				<input type="text" id="imagen" name="producto_imagen" th:field="*{imagen}">
+				<p><input type="submit" class="button" th:value="${edicion}?'Guardar Cambios':'Agregar Producto'"></p>
+			</form>
+        	<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+    		<footer th:replace="~{layouts/footer :: footer}"></footer>
+		</body>
+</html>
