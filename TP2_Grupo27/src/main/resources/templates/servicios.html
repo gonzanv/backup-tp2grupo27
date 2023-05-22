@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Servicio de Paseos</title>
+<title>Servicios</title>
 <link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 </head>
 <body>
@@ -13,44 +13,38 @@
 						<li><a th:href="@{/Inicio}">Inicio</a></li>
 						<li><a th:href="@{/productos/listado}">Productos</a></li>
 						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/paseos}">Servicio de paseos</a></li>
+						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
 						<li><a th:href="@{/sucursales}">Sucursales</a></li>
 						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
 	<div class="contenedor-paseos">
-		<h1>Servicio de Paseos</h1>
-		<p>Puede consultar los distintos horarios de paseos en esta tabla:</p>
+		<h1>Servicios</h1>
+		<p>Puede consultar los distintos servicios que ofrece la tienda en esta tabla:</p>
 		<table border=1>
 			<tr>
-				<th scope="row">Día</th>
-				<th>Lunes</th>
-				<th>Martes</th>
-				<th>Miercoles</th>
-				<th>Jueves</th>
-				<th>Viernes</th>
-				<th>Sabado</th>
-			</tr>
-			<tr>
+				<th>Tipo de Servicio</th>
+				<th>Encargado</th>
 				<th>Horario</th>
-				<td>9 a 12 - 16 a 18</td>
-				<td>9 a 12 - 16 a 18</td>
-				<td>9 a 12 - 16 a 18</td>
-				<td>9 a 12 - 16 a 18</td>
-				<td>9 a 12 - 16 a 18</td>
-				<td>9 a 12 - 16 a 18</td>
+				<th>Dias</th>
+				<th>Acciones</th>
+			</tr>
+			<tr th:each="servi:${servicios}">
+				<td th:text="${servi.tipo}"></td>
+				<td th:text="${servi.encargado}"></td>
+				<td th:text="${servi.horario}"></td>
+				<td th:text="${servi.dias}"></td>
+				<td>
+				<a th:href="@{/servicios/modificar/}+${servi.id}">Editar</a>
+				<a th:href="@{/servicios/eliminar/}+${servi.id}">Eliminar</a>
+				</td>
 			</tr>
 			<tr>
-				<th>Paseador</th>
-				<td>Juan Perez</td>
-				<td>Lucas Diaz</td>
-				<td>Juan Perez</td>
-				<td>María Gomez</td>
-				<td>Lucas Diaz</td>
-				<td>Roberto Vazquez</td>
+				<td colspan="5"><a th:href="@{/servicios/nuevo}">Agregar Servicio</a></td>
 			</tr>
 		</table>
+		</div>
 		<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
 		<footer th:replace="~{layouts/footer :: footer}"></footer>
 </body>
