@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">		
 		<head>
 			<meta charset="UTF-8">
-			<title>Nuevo Consejo</title>
+			<title>Nueva Sucursal</title>
 			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
@@ -19,17 +19,19 @@
 					</ul>
 				</nav>
 			</div>
-			<h2 th:text="${edicion}?'Editar Consejo':'Nuevo Consejo'"></h2>
-			<form th:action="${edicion}?@{/consejosalud/modificar}:@{/consejosalud/guardar}" th:object="${consejo}" method="post">
+			<h2 th:text="${edicion}?'Editar Sucursal':'Nueva Sucursal'"></h2>
+			<form th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
 				<label for="id">Id</label>
-				<input type="number" id="id" name="consejo_id" th:field="*{id}" readonly><br><br>
-				<label for="titulo">Titulo</label>
-				<input type="text" id="titulo" name="consejo_titulo" th:field="*{titulo}">
-				<label for="descripcion">Descripcion</label>
-				<input type="text" id="descripcion" name="consejo_descripcion" th:field="*{descripcion}" size=50 ><br><br>
-				<label for="imagen">URL de imagen del Consejo</label>
-				<input type="text" id="imagen" name="consejo_imagen" th:field="*{imagen}">
-				<p><input type="submit" class="button" th:value="${edicion}?'Guardar Cambios':'Agregar Consejo'"></p>
+				<input type="number" id="id" name="sucursal_id" th:field="*{id}" readonly><br><br>
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}">
+				<label for="provincia">Provincia</label>
+				<input type="text" id="provincia" name="sucursal_provincia" th:field="*{provincia}"><br><br>
+				<label for="ubicacion">Ubicacion</label>
+				<input type="text" id="ubicacion" name="sucursal_ubicacion" th:field="*{ubicacion}">
+				<label for="email">Email</label>
+				<input type="text" id="email" name="sucursal_email" th:field="*{email}">
+				<p><input type="submit" class="button" th:value="${edicion}?'Guardar Cambios':'Agregar Sucursal'"></p>
 			</form>
         	<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
     		<footer th:replace="~{layouts/footer :: footer}"></footer>
