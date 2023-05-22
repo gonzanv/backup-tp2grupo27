@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6,img{
 .agregarproducto:hover{
 	background-color:transparent;
 }
-p>a:visited,.consejo a:visited{
+p>a:visited,.consejo a:visited,td a:visited{
 	color:blue;
 }
 .agregarproducto{
@@ -186,3 +186,11 @@ p>a:visited,.consejo a:visited{
 	color:grey;
 }
 
+.contenedor-paseos td{
+	padding:5px;
+	text-align:center;
+}
+
+.contenedor-paseos a{
+	margin-right:5px;
+}
