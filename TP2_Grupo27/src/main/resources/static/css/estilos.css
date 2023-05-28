@@ -107,14 +107,12 @@ h1,h2,h3,h4,h5,h6,img{
 	margin:5px;
 }
 
-.producto{
-	background:white;
-	border:2px solid black;
+.card{
 	display:inline-block;
-	margin:20px;
 	text-align:center;
-	margin-right:-8px;
-	padding-bottom:5px;
+	margin-bottom:20px;
+	margin-right:55px;
+	margin-left:20px;
 }
 
 .agregarproducto:hover{
@@ -126,15 +124,18 @@ p>a:visited,.consejo a:visited,td a:visited{
 .agregarproducto{
 	color:black;
 }
-.producto img{
-	  width: 300px;
-	  height:300px;
+.card h3{
+	font-size:20px;
 }
 
-.modificaciones p{
+.modificaciones{
 	display:inline;
 	width: 30%;
-	
+}
+.card img{
+	  width: 97%;
+	  height:300px;
+	  margin-bottom:-12px;
 }
 
 .contenedor-consejos h1,.contenedor-consejos h2,.contenedor-consejos h3,.subtitulo,.contenedor-consejos h4{
