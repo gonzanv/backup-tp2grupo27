@@ -2,14 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	</head>
 	<body>
-		<footer th:fragment="footer">
-			<div class="pie">
-			<p>Copyright 2023 - "Tu tienda y cuidadores de confianza para el
+		<footer th:fragment="footer" class="bg-dark text-light position-absolute bottom-0 start-50 translate-middle-x w-100 text-center mt-5">
+			<div class="pie p-1">
+			
+			Copyright 2023 - "Tu tienda y cuidadores de confianza para el
 				bienestar de tu compañero canino: Grupo 27" - Diseñado por Grupo 27 –
-				Jujuy – República Argentina</p>
+				Jujuy – República Argentina
 			</div>
 		</footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
 </html>
