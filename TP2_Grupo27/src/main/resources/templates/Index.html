@@ -2,72 +2,79 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">		
 		<title>Inicio</title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 	</head>
 	<body>
 		<div class="contenedor-index">
 			<header th:replace="~{layouts/header :: header}"></header>
-			<div class="menu">
-				<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+			<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 			</div>
-			<section>
-				<article>
-					<h2>Paseador de perros profesional: La mejor opción para el
-						cuidado de tu mascota</h2>
-					<p>Si necesitas que alguien saque a tu perro a caminar durante el
-						día, puedes contar con nuestros servicios de paseador de perros.
-						Nuestros paseadores de perros altamente calificados se asegurarán de
-						que tu mascota reciba el ejercicio y la atención que necesita,
-						mientras tú estás ocupado en tu día a día. Ofrecemos paseos de
-						diferentes duraciones para satisfacer las necesidades de tu perro,
-						ya sea que necesite un paseo rápido para hacer sus necesidades o un
-						paseo más largo para mantenerse en forma. Nuestros paseadores de
-						perros también se adaptarán a las necesidades específicas de tu
-						perro, como su nivel de energía, temperamento y nivel de
-						socialización con otros perros. Además de sacar a tu perro a
-						caminar, nuestros paseadores de perros también pueden brindarle
-						atención adicional, como jugar con él y darle agua fresca después
-						del paseo. Nos aseguramos de que tu perro tenga una experiencia
-						positiva y enriquecedora cada vez que salga a caminar con nosotros.
-		
-						Si estás interesado en nuestros servicios de paseador de perros,
-						contáctanos para programar una consulta y conocer más sobre cómo
-						podemos ayudarte a ti y a tu mascota.</p>
-				</article>
-				<article>
-					<h2>Consejos de salud para perros: Mantén a tu mascota feliz y
-						saludable</h2>
-					<p>En nuestra página web, ofrecemos consejos de salud para tu
-						perro, para ayudarte a mantener a tu mascota feliz y saludable. Los
-						perros necesitan cuidados regulares para asegurarse de que estén en
-						buena forma física y mental, y nuestros consejos pueden ayudarte a
-						lograrlo. Ofrecemos información sobre una variedad de temas de
-						salud, como nutrición, cuidado dental, ejercicios, prevención de
-						enfermedades, cuidado de la piel y pelaje, y mucho más. Nuestros
-						consejos están diseñados para ser útiles tanto para dueños de perros
-						nuevos como experimentados.</p>
-				</article>
-			</section>
-		
-			<aside>
-				<h2>Consejos prácticos de entrenamiento de perros: Aprende a
-					educar y fortalecer el vínculo con tu mascota</h2>
-				<p>En esta página web encontrarás consejos prácticos y útiles para entrenar a tu perro y fortalecer el vínculo entre tú y tu mascota. Aprenderás sobre técnicas efectivas de entrenamiento, cómo reforzar comportamientos positivos y corregir conductas no deseadas. Además, te daremos consejos para adaptar el entrenamiento a las necesidades individuales de tu perro y cómo hacerlo de una manera divertida y estimulante para él. Nuestro objetivo es ayudarte a construir una relación más fuerte y saludable con tu compañero canino, mientras trabajas juntos en su educación y bienestar.</p>
-			</aside>
-		
-			
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-9">
+						<section>
+							<article>
+								<h2>Paseador de perros profesional: La mejor opción para el
+									cuidado de tu mascota</h2>
+								<p>Si necesitas que alguien saque a tu perro a caminar durante el
+									día, puedes contar con nuestros servicios de paseador de perros.
+									Nuestros paseadores de perros altamente calificados se asegurarán de
+									que tu mascota reciba el ejercicio y la atención que necesita,
+									mientras tú estás ocupado en tu día a día. Ofrecemos paseos de
+									diferentes duraciones para satisfacer las necesidades de tu perro,
+									ya sea que necesite un paseo rápido para hacer sus necesidades o un
+									paseo más largo para mantenerse en forma. Nuestros paseadores de
+									perros también se adaptarán a las necesidades específicas de tu
+									perro, como su nivel de energía, temperamento y nivel de
+									socialización con otros perros. Además de sacar a tu perro a
+									caminar, nuestros paseadores de perros también pueden brindarle
+									atención adicional, como jugar con él y darle agua fresca después
+									del paseo. Nos aseguramos de que tu perro tenga una experiencia
+									positiva y enriquecedora cada vez que salga a caminar con nosotros.
+					
+									Si estás interesado en nuestros servicios de paseador de perros,
+									contáctanos para programar una consulta y conocer más sobre cómo
+									podemos ayudarte a ti y a tu mascota.</p>
+							</article>
+							<article>
+								<h2>Consejos de salud para perros: Mantén a tu mascota feliz y
+									saludable</h2>
+								<p>En nuestra página web, ofrecemos consejos de salud para tu
+									perro, para ayudarte a mantener a tu mascota feliz y saludable. Los
+									perros necesitan cuidados regulares para asegurarse de que estén en
+									buena forma física y mental, y nuestros consejos pueden ayudarte a
+									lograrlo. Ofrecemos información sobre una variedad de temas de
+									salud, como nutrición, cuidado dental, ejercicios, prevención de
+									enfermedades, cuidado de la piel y pelaje, y mucho más. Nuestros
+									consejos están diseñados para ser útiles tanto para dueños de perros
+									nuevos como experimentados.</p>
+							</article>
+						</section>
+					</div>
+					<div class="col-3">
+						<aside>
+							<h2 class="mt-3">Consejos prácticos de entrenamiento de perros: Aprende a
+								educar y fortalecer el vínculo con tu mascota</h2>
+							<p>En esta página web encontrarás consejos prácticos y útiles para entrenar a tu perro y fortalecer el vínculo entre tú y tu mascota. Aprenderás sobre técnicas efectivas de entrenamiento, cómo reforzar comportamientos positivos y corregir conductas no deseadas. Además, te daremos consejos para adaptar el entrenamiento a las necesidades individuales de tu perro y cómo hacerlo de una manera divertida y estimulante para él. Nuestro objetivo es ayudarte a construir una relación más fuerte y saludable con tu compañero canino, mientras trabajas juntos en su educación y bienestar.</p>
+						</aside>
+					</div>
+				</div>
+			</div>
 		</div>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
 	<footer th:replace="~{layouts/footer :: footer}"></footer>
 </html>

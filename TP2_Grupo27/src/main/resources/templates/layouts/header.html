@@ -2,14 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	</head>
 	<body>
 		<header th:fragment="header">
-	    			<h1>Tu tienda y cuidadores de confianza para el bienestar de tu
+	    			<h1 class="position-relative top-50 start-50 translate-middle">Tu tienda y cuidadores de confianza para el bienestar de tu
 					compañero canino: Grupo 27</h1>
-					<p>Tenemos a la venta de productos relacionados con el cuidado y
+					<p class="position-relative top-50 start-50 translate-middle">Tenemos a la venta de productos relacionados con el cuidado y
 					bienestar de las mascotas. Aquí se pueden encontrar alimentos,
 					juguetes, accesorios, productos de higiene, entre otros.</p>
 		</header>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
 </html>
