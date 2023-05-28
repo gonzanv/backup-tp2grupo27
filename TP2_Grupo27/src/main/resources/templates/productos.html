@@ -2,53 +2,50 @@
 	<html xmlns:th="http://www.thymeleaf.org" lang="es">		
 		<head>
 			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 			<title>Productos</title>
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
 		<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menu">
-			<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+		<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
+		<div class="container-fluid">
         		<h1> BIENVENIDO A NUESTRA TIENDA DE PRODUCTOS PARA MASCOTAS </h1>
     		<main>
-        		<nav>
-            		<h2>Ofertas</h2>
-        		</nav>
-        		<section>
-        			<div class="producto" th:each="produ:${productos}">
-        				<img th:src="@{${produ.imagen}}">
-        				<hr>
-        				<div class="descripcion">
-        					<h3 th:text="${produ.nombre}"></h3>
-        					<p th:text="${produ.descuento}+'% de descuento'"></p>
-        					<p th:text="'$'+${produ.calcularDescuento()}"></p>
-        					<div class="modificaciones">
-        						<p><a th:href="@{/productos/modificar/}+${produ.codigo}">Editar</a></p>
-        						<p><a th:href="@{/productos/eliminar/}+${produ.codigo}">Eliminar</a></p>
-        					</div>
-        				</div>
-        			</div>
-        			<a th:href="@{/productos/nuevo}" class="agregarproducto">
-	            		<div class="producto">
+    			<h2>Ofertas</h2>
+    			<div class="row">
+            		
+	        			<div class="card col-3" style="width:20rem;" th:each="produ:${productos}">
+		        				<img th:src="@{${produ.imagen}}" class="card-img-top">
+		        				<hr>
+		        				<div class="card-body">
+		        					<h3 th:text="${produ.nombre}"></h3>
+		        					<p th:text="${produ.descuento}+'% de descuento'"></p>
+		        					<p th:text="'$'+${produ.calcularDescuento()}"></p>
+		        						<p class="modificaciones"><a th:href="@{/productos/modificar/}+${produ.codigo}">Editar</a></p>
+		        						<p class="modificaciones"><a th:href="@{/productos/eliminar/}+${produ.codigo}">Eliminar</a></p>
+		        				</div>
+	        		</div>
+        			<a th:href="@{/productos/nuevo}" class="card" style="width:20rem;">
 	        				<img th:src="@{https://cdn.icon-icons.com/icons2/1993/PNG/512/add_circle_create_expand_new_plus_icon_123218.png}">
-	        				<hr>
-	        				<div class="descripcion">
+	        				
+	        				<div class="card-body"><br><br>
 	        					<h3>Agregar Producto</h3>
 	        				</div>
-	        			</div>
         			</a>
-        		</section>
-        		
+        		</div>
     		</main>
     		
     		<footer>
@@ -56,6 +53,8 @@
         		<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
     		</footer>
     		<footer th:replace="~{layouts/footer :: footer}"></footer>
+    	</div>
+    		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 		</body>
 	</html>
 	
