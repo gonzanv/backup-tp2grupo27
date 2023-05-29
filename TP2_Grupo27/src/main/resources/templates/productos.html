@@ -22,9 +22,9 @@
 				</nav>
 		</div>
 		<div class="container-fluid">
-        		<h1> BIENVENIDO A NUESTRA TIENDA DE PRODUCTOS PARA MASCOTAS </h1>
+        		<h1 class="text-center"> BIENVENIDO A NUESTRA TIENDA DE PRODUCTOS PARA MASCOTAS </h1>
     		<main>
-    			<h2>Ofertas</h2>
+    			<h2 class="text-center">Ofertas</h2>
     			<div class="row">
             		
 	        			<div class="card col-3" style="width:20rem;" th:each="produ:${productos}">
@@ -34,8 +34,8 @@
 		        					<h3 th:text="${produ.nombre}"></h3>
 		        					<p th:text="${produ.descuento}+'% de descuento'"></p>
 		        					<p th:text="'$'+${produ.calcularDescuento()}"></p>
-		        						<p class="modificaciones"><a th:href="@{/productos/modificar/}+${produ.codigo}">Editar</a></p>
-		        						<p class="modificaciones"><a th:href="@{/productos/eliminar/}+${produ.codigo}">Eliminar</a></p>
+		        						<p class="modificaciones"><a th:href="@{/productos/modificar/}+${produ.codigo}" class="btn btn-outline-warning text-dark" role="button">Editar</a></p>
+		        						<p class="modificaciones"><a th:href="@{/productos/eliminar/}+${produ.codigo}" class="btn btn-outline-warning text-dark" role="button">Eliminar</a></p>
 		        				</div>
 	        		</div>
         			<a th:href="@{/productos/nuevo}" class="card" style="width:20rem;">
@@ -47,10 +47,9 @@
         			</a>
         		</div>
     		</main>
-    		
     		<footer>
         		<h4>Consulte nuestros catalogos online</h4>
-        		<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+        		<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
     		</footer>
     		<footer th:replace="~{layouts/footer :: footer}"></footer>
     	</div>

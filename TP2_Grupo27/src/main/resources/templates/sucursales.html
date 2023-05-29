@@ -2,56 +2,61 @@
 	<html xmlns:th="http://www.thymeleaf.org" lang="es">
 		<head>
 			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 			<title>Sucursales</title>
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
 		
 		
 		<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menu">
-			<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+		<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
-		<br>
-		<div class="contenedor-paseos">
-			<table border=1>
-			<tr>
-				<th>Nombre</th>
-				<th>Provincia</th>
-				<th>Ubicacion</th>
-				<th>Email</th>
-				<th>Acciones</th>
-			</tr>
-			<tr th:each="sucu:${sucursales}">
-				<td th:text="${sucu.nombre}"></td>
-				<td th:text="${sucu.provincia}"></td>
-				<td th:text="${sucu.ubicacion}"></td>
-				<td th:text="${sucu.email}"></td>
-				<td>
-				<a th:href="@{/sucursales/modificar/}+${sucu.id}">Editar</a>
-				<a th:href="@{/sucursales/eliminar/}+${sucu.id}">Eliminar</a>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="5"><a th:href="@{/sucursales/nuevo}">Agregar Servicio</a></td>
-			</tr>
-		</table>
-		</div>
-    		<footer>
-        		<h4>Para mas informacion contactenos</h4>
-    		</footer>
-    			<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+		<div class="container-fluid">
+			<div class="contenedor-paseos">
+				<table border=1 class="table table-striped mx-auto">
+				<thead class="table-dark">
+					<tr>
+						<th>Nombre</th>
+						<th>Provincia</th>
+						<th>Ubicacion</th>
+						<th>Email</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr class="table-light align-middle" th:each="sucu:${sucursales}">
+					<td th:text="${sucu.nombre}"></td>
+					<td th:text="${sucu.provincia}"></td>
+					<td th:text="${sucu.ubicacion}"></td>
+					<td th:text="${sucu.email}"></td>
+					<td>
+					<a th:href="@{/sucursales/modificar/}+${sucu.id}" class="btn btn-outline-warning text-dark p-1">Editar</a>
+					<a th:href="@{/sucursales/eliminar/}+${sucu.id}" class="btn btn-outline-warning text-dark p-1">Eliminar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-light align-middle" colspan="5"><a th:href="@{/sucursales/nuevo}" class="btn btn-outline-warning text-dark p-1">Agregar Servicio</a></td>
+				</tr>
+				</tbody>
+			</table>
+			</div>
+	        		<h4 class="mb-4">Para mas informacion contactenos</h4>
+	    			<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
+    	</div>
     						<footer th:replace="~{layouts/footer :: footer}"></footer>
-    			
+    		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 		</body>
 	</html>
 	

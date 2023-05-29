@@ -2,38 +2,55 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">		
 		<head>
 			<meta charset="UTF-8">
-			<title>Nuevo Servicio</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<title th:text="${edicion}?'Editar Servicio':'Nuevo Servicio'">Nuevo Servicio</title>
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 			<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		</head>
 		<body>
 			<header th:replace="~{layouts/header :: header}"></header>
-			<div class="menu">
-				<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+		<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
-			</div>
-			<h2 th:text="${edicion}?'Editar Servicio':'Nuevo Servicio'"></h2>
+		</div>
+		<div class="container-fluid">
+			<h2 th:text="${edicion}?'Editar Servicio':'Nuevo Servicio'" class="text-center"></h2>
 			<form th:action="${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
-				<label for="id">Id</label>
-				<input type="number" id="id" name="servicio_id" th:field="*{id}" readonly><br><br>
-				<label for="tipo">Tipo de Servicio</label>
-				<input type="text" id="tipo" name="servicio_tipo" th:field="*{tipo}">
-				<label for="encargado">Encargado</label>
-				<input type="text" id="encargado" name="servicio_encargado" th:field="*{encargado}"><br><br>
-				<label for="Horario">Horario del Servicio</label>
-				<input type="text" id="horario" name="servicio_horario" th:field="*{horario}">
-				<label for="Dias">Dias del Servicio</label>
-				<input type="text" id="dias" name="servicio_dias" th:field="*{dias}">
-				<p><input type="submit" class="button" th:value="${edicion}?'Guardar Cambios':'Agregar Servicio'"></p>
+			<div class="row">
+				<label class="col-form-label" for="id">Id</label>
+				<div class="col-1">
+				<input class="form-control" type="number" id="id" name="servicio_id" th:field="*{id}" readonly>
+				</div><p>
+				<div class="col-2">
+				<label class="col-form-label" for="tipo">Tipo de Servicio</label>
+				<input class="form-control" type="text" id="tipo" name="servicio_tipo" th:field="*{tipo}">
+				</div>
+				<div class="col-2">
+				<label class="col-form-label" for="encargado">Encargado</label>
+				<input class="form-control" type="text" id="encargado" name="servicio_encargado" th:field="*{encargado}">
+				</div><p>
+				<div class="col-2">
+				<label class="col-form-label" for="Horario">Horario del Servicio</label>
+				<input class="form-control" type="text" id="horario" name="servicio_horario" th:field="*{horario}">
+				</div>
+				<div class="col-2">
+				<label class="col-form-label" for="Dias">Dias del Servicio</label>
+				<input class="form-control" type="text" id="dias" name="servicio_dias" th:field="*{dias}">
+				</div><p>
+				<p><input type="submit" class="button btn btn-primary" th:value="${edicion}?'Guardar Cambios':'Agregar Servicio'"></p>
+			</div>
 			</form>
-        	<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
+        	<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
+        </div>
     		<footer th:replace="~{layouts/footer :: footer}"></footer>
+    		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 		</body>
 </html>

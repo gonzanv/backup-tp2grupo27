@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class contáctenosController {
 
 	@GetMapping("/contáctenos")
-	public String getindex() {
+	public String getContacenosPage() {
 		return "contáctenos";
+	}
+	
+	@GetMapping("/submit-mensaje")
+	public String getBubmitPage() {
+		return "mensajesubido";
 	}
 }

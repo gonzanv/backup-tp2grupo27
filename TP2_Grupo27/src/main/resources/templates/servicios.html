@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Servicios</title>
-<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
-</head>
-<body>
-		<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menu">
-			<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Servicios</title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
+	</head>
+	<body>
+			<header th:replace="~{layouts/header :: header}"></header>
+		<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
-	<div class="contenedor-paseos">
-		<h1>Servicios</h1>
-		<p>Puede consultar los distintos servicios que ofrece la tienda en esta tabla:</p>
-		<table border=1>
-			<tr>
-				<th>Tipo de Servicio</th>
-				<th>Encargado</th>
-				<th>Horario</th>
-				<th>Dias</th>
-				<th>Acciones</th>
-			</tr>
-			<tr th:each="servi:${servicios}">
-				<td th:text="${servi.tipo}"></td>
-				<td th:text="${servi.encargado}"></td>
-				<td th:text="${servi.horario}"></td>
-				<td th:text="${servi.dias}"></td>
-				<td>
-				<a th:href="@{/servicios/modificar/}+${servi.id}">Editar</a>
-				<a th:href="@{/servicios/eliminar/}+${servi.id}">Eliminar</a>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="5"><a th:href="@{/servicios/nuevo}">Agregar Servicio</a></td>
-			</tr>
-		</table>
+		<div class="container-fluid">
+			<div class="contenedor-paseos">
+				<h1 class="text-center">Servicios</h1>
+				<p class="text-center">Puede consultar los distintos servicios que ofrece la tienda en esta tabla:</p>
+				<table border=1 class="table table-striped mx-auto">
+				<thead class="table-dark">
+					<tr>
+						<th>Tipo de Servicio</th>
+						<th>Encargado</th>
+						<th>Horario</th>
+						<th>Dias</th>
+						<th>Acciones</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr class="table-light align-middle" th:each="servi:${servicios}">
+							<td th:text="${servi.tipo}"></td>
+							<td th:text="${servi.encargado}"></td>
+							<td th:text="${servi.horario}"></td>
+							<td th:text="${servi.dias}"></td>
+							<td>
+							<a th:href="@{/servicios/modificar/}+${servi.id}" class="btn btn-outline-warning text-dark p-1" role="button">Editar</a>
+							<a th:href="@{/servicios/eliminar/}+${servi.id}" class="btn btn-outline-warning text-dark p-1" role="button">Eliminar</a>
+							</td>
+						</tr>
+						<tr class="table-light">
+							<td colspan="5"><a th:href="@{/servicios/nuevo}" class="btn btn-outline-warning text-dark p-1" role="button">Agregar Servicio</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+				<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
 		</div>
-		<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
-		<footer th:replace="~{layouts/footer :: footer}"></footer>
-</body>
+			<footer th:replace="~{layouts/footer :: footer}"></footer>
+			<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
 </html>
