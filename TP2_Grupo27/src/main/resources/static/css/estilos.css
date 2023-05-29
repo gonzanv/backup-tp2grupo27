@@ -73,11 +73,12 @@ table {
 }
 .pie{
 	font-size:14px;
+	width:100.051%;
 }
 th{
 	text-align:center;
 }
-
+/**
 .contenedor-paseos table{
 	background-color:white;
 	margin-left:5px;
@@ -91,7 +92,7 @@ th{
 .contenedor-paseos p,.contenedor-paseos h1{
 	padding:7px;
 }
-
+**/
 .a {
   background-color: powderblue;
   transition: background-color .5s;
@@ -118,8 +119,9 @@ h1,h2,h3,h4,h5,h6,img{
 .agregarproducto:hover{
 	background-color:transparent;
 }
-p>a:visited,.consejo a:visited,td a:visited{
+a,p>a:visited,.consejo a:visited,td a:visited{
 	color:blue;
+	text-decoration:none;
 }
 .agregarproducto{
 	color:black;
@@ -165,4 +167,9 @@ p>a:visited,.consejo a:visited,td a:visited{
 
 .contenedor-paseos a{
 	margin-right:5px;
+}
+
+.centrar{
+	margin-left:38%;
+	margin-right:28%;
 }

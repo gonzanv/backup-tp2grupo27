@@ -2,7 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Contacto</title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 		<style>
 table, th, td {
@@ -15,50 +17,54 @@ table, th, td {
 	</head>
 <body>
 		<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menu">
-			<nav>
-					<ul>
-						<li><a th:href="@{/Inicio}">Inicio</a></li>
-						<li><a th:href="@{/productos/listado}">Productos</a></li>
-						<li><a th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
-						<li><a th:href="@{/servicios/listado}">Servicios</a></li>
-						<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li><a th:href="@{/contáctenos}">Contáctanos</a></li>
+		<div class="menuu">
+				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
-
-	<table>
-		<th>
-		<h1>Contáctenos</h1>
-		
-		<p>3915 Av. General Belgrano, 388-4999999</p>
-		<p>Lunes a viernes: 9:00 - 20:00</p>
-		<p>Sabados y domingos: 9:00 - 13:00</p>
-		<p><a>contacto@gmail.com</a></p>
-		
-    
-      <label for="nombre">Nombre:</label>
-      <input type="text" ><br>
-
-      <label for="email">Email:</label>
-      <input type="email"><br>
-     
-      <label for="ciudad">ciudad:</label>
-      <input type="text" ><br>
-      
-		<label for="mensaje">Mensaje:</label>
-<textarea name="mensaje"  rows="5"></textarea><br>
-      <button type="submit">Enviar</button>
-      
-		</th> 
-		
+		<div class="container-fluid">
 			
-				
-	</table>
-	<p><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">Volver al inicio</a></p>
-			
-	
+			<div class="text-center">
+				<h1>Contáctenos</h1>
+				<p class="p-0">3915 Av. General Belgrano, 388-4999999</p>
+				<p class="p-0">Lunes a viernes: 9:00 - 20:00</p>
+				<p class="p-0">Sabados y domingos: 9:00 - 13:00</p>
+				<p class="p-0">contacto@gmail.com</p>	
+			</div>
+			<div class="mx-auto" style="width:500px;">
+			    <form th:action="@{/submit-mensaje}" class="">
+			    	<div class="row">
+				    	<div class="col-auto">
+					      <label class="col-form-label" for="nombre">Nombre:</label>
+					      <input class="form-control" id="nombre" type="text" name="nombre"><br>
+						</div>
+						<div class="col-auto">
+					      <label class="col-form-label" for="email">Email:</label>
+					      <input class="form-control" id="email" type="email" name="email"><br>
+				     	</div><p>
+				     	<div class="col-auto">
+					      <label class="col-form-label" for="ciudad">Ciudad:</label>
+					      <input class="form-control" id="ciudad" type="text" name="ciudad"><br>
+				      </div>
+				      <div class="col-auto">
+						  <label  for="mensaje" class="col-form-label align-top">Mensaje:</label>
+						  <textarea class="form-control" id="mensaje" name="mensaje"  rows="5" required></textarea><br>
+					  </div>
+				      <p class="text-center"><button style="width:100px;" class="button btn btn-primary" type="submit">Enviar</button></p>
+			    	</div>
+			    </form> 
+		    </div> 
+		    
+	    
+			<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver 	al inicio</a><p>
+		</div>
 </body>
 	<footer th:replace="~{layouts/footer :: footer}"></footer>
 </html>
