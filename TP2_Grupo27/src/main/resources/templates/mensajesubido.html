@@ -8,8 +8,11 @@
 		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
 	</head>
 	<body>
-		<div class="position-absolute top-50 start-50 translate-middle">
-			<h1 class="text-center">EL MENSAJE FUE ENVIADO CON EXITO!!</h1>
+		<div class="container-fluid">
+			<div class="position-absolute top-50 start-50 translate-middle">
+				<h1 class="text-center">EL MENSAJE FUE ENVIADO CON EXITO!!</h1>
+			</div>
+			<div class="position-absolute bottom-0"><a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver 	al inicio</a><p></div>
 		</div>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
