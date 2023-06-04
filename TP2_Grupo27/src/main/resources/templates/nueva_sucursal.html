@@ -32,18 +32,46 @@
 				<div class="col-2">
 				<label class="col-form-label" for="nombre">Nombre</label>
 				<input class="form-control" type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}">
+				<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div>
 				<div class="col-2">
 				<label class="col-form-label" for="provincia">Provincia</label>
-				<input class="form-control" type="text" id="provincia" name="sucursal_provincia" th:field="*{provincia}">
+				<select id="provincia" class="form-select" name="sucursal_provincia" aria-label="Default select-example" th:field="*{provincia}">
+					<option selected value="">Seleccione una Provincia</option>
+				    <option value="BUENOS AIRES">BUENOS AIRES</option>
+				    <option value="CATAMARCA">CATAMARCA</option>
+				    <option value="CHACO">CHACO</option>
+				    <option value="CHUBUT">CHUBUT</option>
+				    <option value="CIUDAD AUTONOMA DE Bs As">CIUDAD AUTONOMA DE Bs As</option>
+				    <option value="CORDOBA">CORDOBA</option>
+				    <option value="CORRIENTES">CORRIENTES</option>
+				    <option value="ENTRE RIOS">ENTRE RIOS</option>
+				    <option value="FORMOSA">FORMOSA</option>
+				    <option value="JUJUY">JUJUY</option>
+				    <option value="LA PAMPA">LA PAMPA</option>
+				    <option value="LA RIOJA">LA RIOJA</option>
+				    <option value="MENDOZA">MENDOZA</option>
+				    <option value="MISIONES">MISIONES</option>
+				    <option value="NEUQUEN">NEUQUEN</option>
+				    <option value="RIO NEGRO">RIO NEGRO</option>
+				    <option value="SALTA">SALTA</option>
+				    <option value="SAN LUIS">SAN LUIS</option>
+				    <option value="SANTA CRUZ">SANTA CRUZ</option>
+				    <option value="SANTA FE">SANTA FE</option>
+				    <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+				    <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+				</select>
+				<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
 				</div><p>
 				<div class="col-2">
 				<label class="col-form-label" for="ubicacion">Ubicacion</label>
 				<input class="form-control" type="text" id="ubicacion" name="sucursal_ubicacion" th:field="*{ubicacion}">
+				<div class="text-danger" th:if="${#fields.hasErrors('ubicacion')}" th:errors="*{ubicacion}"></div>
 				</div>
 				<div class="col-2">
 				<label class="col-form-label" for="email">Email</label>
-				<input class="form-control" type="text" id="email" name="sucursal_email" th:field="*{email}">
+				<input class="form-control" type="email" id="email" name="sucursal_email" th:field="*{email}">
+				<div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 				</div><p>
 				<p><input type="submit" class="button btn btn-primary" th:value="${edicion}?'Guardar Cambios':'Agregar Sucursal'"></p>
 			</div>

@@ -2,13 +2,21 @@ package ar.edu.unju.fi.model;
 import java.text.DecimalFormat;
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.*;
+
 @Component
 public class Producto {
+	@Size(min=5,message="Asegurese de que el nombre contenga al menos 5 caracteres")
 	private String nombre;
 	private int codigo;
+	@Positive(message="Asegurese de que el producto tenga un precio positivo")
 	private double precio;
+	@Size(min=4, message="Asegurese de que la categoria contenga al menos 4 caracteres")
 	private String categoria;
+	@PositiveOrZero(message="Asegurese de que el descuento sea positivo o cero")
+	@Max(value=50, message="Asegurese de que el descuento sea como maximo del 50%")
 	private int descuento;
+	@NotEmpty(message="Es necesario vincular una imagen para el producto")
 	private String imagen;
 	
 	public Producto() {

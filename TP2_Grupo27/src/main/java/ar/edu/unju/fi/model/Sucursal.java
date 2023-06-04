@@ -1,13 +1,19 @@
 package ar.edu.unju.fi.model;
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.*;
+
 @Component
 public class Sucursal {
 	private int id;
+	@NotEmpty(message="Asegurese de completar este campo")
 	private String nombre;
+	@NotBlank(message="Asegurese de seleccionar una provincia")
 	private String provincia;
+	@Size(min=5,message="Asegurese de que la ubicación ocupe al menos 5 caracteres")
 	private String ubicacion;
-	private String email;
+	@NotEmpty(message="Este campo es obligatorio")
+	private String email; //no utilizo @Email xq el mismo form de html ya controla  la validacion del correo
 	
 	public Sucursal() {
 		
