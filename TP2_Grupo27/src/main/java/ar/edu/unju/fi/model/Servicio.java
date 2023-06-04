@@ -1,12 +1,18 @@
 package ar.edu.unju.fi.model;
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.*;
+
 @Component
 public class Servicio {
 	private int id;
+	@Size(min=5,message="Asegurese de que el tipo contenga al menos 5 caracteres")
 	private String tipo;
+	@Size(min=8,message="Asegurese de que el encargado contenga al menos 8 caracteres, colocar nombre y apellido")
 	private String encargado;
+	@Size(min=8,message="Asegurese de que el horario contenga al menos 8 caracteres")
 	private String horario;
+	@Size(min=5,message="Asegurese de que los dias del servicio contenga al menos 5 caracteres")
 	private String dias;
 	
 	public Servicio() {

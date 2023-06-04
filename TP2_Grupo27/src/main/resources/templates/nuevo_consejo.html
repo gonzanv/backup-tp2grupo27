@@ -32,14 +32,17 @@
 				<div class="col-auto">
 				<label class="col-form-label" for="titulo">Titulo</label>
 				<input class="form-control" type="text" id="titulo" name="consejo_titulo" th:field="*{titulo}">
+				<div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
 				</div>
 				<div class="col-auto">
 				<label class="col-form-label" for="descripcion">Descripcion</label>
-				<input class="form-control" type="text" id="descripcion" name="consejo_descripcion" th:field="*{descripcion}" size=63 >
+				<input class="form-control" type="text" id="descripcion" name="consejo_descripcion" th:field="*{descripcion}" size=63>
+				<div class="text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
 				</div> <p>
 				<div class="col-5">
 				<label class="col-form-label" for="imagen">URL de imagen del Consejo</label>
 				<input class="form-control" type="text" id="imagen" name="consejo_imagen" th:field="*{imagen}">
+				<div class="text-danger" th:if="${#fields.hasErrors('imagen')}" th:errors="*{imagen}"></div>
 				</div> <p>
 				<p><input type="submit" class="button btn btn-primary" th:value="${edicion}?'Guardar Cambios':'Agregar Consejo'"></p>
 			</div>

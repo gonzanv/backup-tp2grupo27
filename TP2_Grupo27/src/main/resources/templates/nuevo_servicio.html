@@ -32,18 +32,22 @@
 				<div class="col-2">
 				<label class="col-form-label" for="tipo">Tipo de Servicio</label>
 				<input class="form-control" type="text" id="tipo" name="servicio_tipo" th:field="*{tipo}">
+				<div class="text-danger" th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></div>
 				</div>
 				<div class="col-2">
 				<label class="col-form-label" for="encargado">Encargado</label>
 				<input class="form-control" type="text" id="encargado" name="servicio_encargado" th:field="*{encargado}">
+				<div class="text-danger" th:if="${#fields.hasErrors('encargado')}" th:errors="*{encargado}"></div>
 				</div><p>
 				<div class="col-2">
 				<label class="col-form-label" for="Horario">Horario del Servicio</label>
 				<input class="form-control" type="text" id="horario" name="servicio_horario" th:field="*{horario}">
+				<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
 				</div>
 				<div class="col-2">
 				<label class="col-form-label" for="Dias">Dias del Servicio</label>
 				<input class="form-control" type="text" id="dias" name="servicio_dias" th:field="*{dias}">
+				<div class="text-danger" th:if="${#fields.hasErrors('dias')}" th:errors="*{dias}"></div>
 				</div><p>
 				<p><input type="submit" class="button btn btn-primary" th:value="${edicion}?'Guardar Cambios':'Agregar Servicio'"></p>
 			</div>
