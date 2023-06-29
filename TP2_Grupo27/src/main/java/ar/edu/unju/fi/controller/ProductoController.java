@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ar.edu.unju.fi.listas.ListaProductos;
+import ar.edu.unju.fi.listas.ListaProducto;
 import ar.edu.unju.fi.model.Producto;
 import jakarta.validation.Valid;
 
 
 @Controller
 @RequestMapping("/productos")
-public class productosController {
+public class ProductoController {
 	
 	@Autowired
 	private Producto produ;
 	@Autowired
-	private ListaProductos listaproductos;
+	private ListaProducto listaproductos;
 	
 	@GetMapping("/listado")
 	public String getListaProductosPage(Model model) {

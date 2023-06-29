@@ -9,15 +9,15 @@
 		</head>
 		<body>
 			<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menuu">
+		<div class="menu">
 				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/inicio}">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejos_salud/listado}">Consejos de salud</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contactanos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
@@ -29,22 +29,32 @@
 				<div class="col-auto">
 				<input class="form-control" type="number" id="codigo" name="producto_codigo" th:field="*{codigo}" readonly>
 				</div> <p>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="nombre">Nombre</label>
 				<input class="form-control" type="text" id="nombre" name="producto_nombre" th:field="*{nombre}">
 				<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div>
-				<div class="col-auto">
-				<label class="col-form-label" for="categoria">Categoria</label>
-				<input class="form-control" type="text" id="categoria" name="producto_categoria" th:field="*{categoria}">
-				<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
+				<div class="col-2">
+				<label class="col-form-label" for="categoria">Categoría</label>
+					<select class="form-select" id="categoria" name="producto_categoria" th:field="*{categoria}">
+						<option selected value="">Seleccione una Categoría</option>
+				    	<option value="Transportadores">Transportadores</option>
+				    	<option value="Alimentos">Alimentos</option>
+				    	<option value="Camas">Camas</option>
+				    	<option value="Corrales">Corrales</option>
+				    	<option value="Vestimenta">Vestimenta</option>
+				    	<option value="Higiene">Higiene</option>
+				    	<option value="Accsesorios">Accesorios</option>
+				    	<option value="Juguetes">Juguetes</option>
+					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				</div> <p>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="precio">Precio</label>
 				<input class="form-control" type="number" step="0.01" id="precio" name="producto_precio" th:field="*{precio}">
 				<div class="text-danger" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
 				</div>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="descuento">Porcentaje de Descuento</label>
 				<input class="form-control" type="number" id="descuento" name="producto_descuento" th:field="*{descuento}">
 				<div class="text-danger" th:if="${#fields.hasErrors('descuento')}" th:errors="*{descuento}"></div>
@@ -57,7 +67,7 @@
 				<p><input type="submit" class="button btn btn-primary" th:value="${edicion}?'Guardar Cambios':'Agregar Producto'"></p>
 			</div>
 			</form>
-        	<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
+        	<a th:href="@{/inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
         </div>	
     		<footer th:replace="~{layouts/footer :: footer}"></footer>
     		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>

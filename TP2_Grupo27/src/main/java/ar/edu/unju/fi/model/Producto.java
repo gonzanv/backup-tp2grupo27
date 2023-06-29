@@ -11,7 +11,7 @@ public class Producto {
 	private int codigo;
 	@Positive(message="Asegurese de que el producto tenga un precio positivo")
 	private double precio;
-	@Size(min=4, message="Asegurese de que la categoria contenga al menos 4 caracteres")
+	@NotBlank(message="Asegurese de seleccionar una categoría")
 	private String categoria;
 	@PositiveOrZero(message="Asegurese de que el descuento sea positivo o cero")
 	@Max(value=50, message="Asegurese de que el descuento sea como maximo del 50%")

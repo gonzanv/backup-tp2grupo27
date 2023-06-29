@@ -4,15 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class contáctenosController {
+public class ContactanosController {
 
-	@GetMapping("/contáctenos")
+	@GetMapping("/contactanos")
 	public String getContacenosPage() {
-		return "contáctenos";
+		return "contactanos";
 	}
 	
 	@GetMapping("/submit-mensaje")
 	public String getBubmitPage() {
-		return "mensajesubido";
+		return "mensaje_subido";
 	}
 }

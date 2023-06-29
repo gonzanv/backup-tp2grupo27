@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ar.edu.unju.fi.listas.ListaConsejos;
+import ar.edu.unju.fi.listas.ListaConsejo;
 import ar.edu.unju.fi.model.Consejo;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/consejosalud")
-public class consejosaludController {
+@RequestMapping("/consejos_salud")
+public class ConsejoSaludController {
 
 	@Autowired
 	private Consejo conse;
 	@Autowired
-	private ListaConsejos listaconsejos;
+	private ListaConsejo listaconsejos;
 	
 	@GetMapping("/listado")
 	public String getListaConsejosPage(Model model) {
 		model.addAttribute("consejos",listaconsejos.getConsejos());
-		return "consejosalud";
+		return "consejos_salud";
 	}
 	
 	@GetMapping("/nuevo")
@@ -45,7 +45,7 @@ public class consejosaludController {
 	
 	@PostMapping("/guardar")
 	public ModelAndView getGuardarConsejoPage(@Valid @ModelAttribute("consejo")Consejo consejo, BindingResult result) {
-		ModelAndView modelView = new ModelAndView("consejosalud");
+		ModelAndView modelView = new ModelAndView("consejos_salud");
 		if(result.hasErrors())
 		{
 			modelView.setViewName("nuevo_consejo");
@@ -86,7 +86,7 @@ public class consejosaludController {
 				break;
 			}
 		}
-		return "redirect:/consejosalud/listado";
+		return "redirect:/consejos_salud/listado";
 	}
 	
 	@GetMapping("/eliminar/{id}")
@@ -98,6 +98,6 @@ public class consejosaludController {
 				break;
 			}
 		}
-		return "redirect:/consejosalud/listado";
+		return "redirect:/consejos_salud/listado";
 	}
 }

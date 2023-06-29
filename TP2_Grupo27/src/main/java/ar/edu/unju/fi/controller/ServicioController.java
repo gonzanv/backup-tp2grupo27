@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.listas.ListaServicios;
+import ar.edu.unju.fi.listas.ListaServicio;
 import ar.edu.unju.fi.model.Servicio;
 import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/servicios")
-public class serviciosController {
+public class ServicioController {
 
 	@Autowired
 	private Servicio servi;
 	@Autowired
-	private ListaServicios listaservicios;
+	private ListaServicio listaservicios;
 	@GetMapping("/listado")
 	public String getListaServiciosPage(Model model) {
 		model.addAttribute("servicios", listaservicios.getServicios());
