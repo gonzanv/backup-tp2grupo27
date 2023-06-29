@@ -81,7 +81,7 @@ public class ServicioController {
 			if(servi.getId()==servicio.getId())
 			{
 				servi.setTipo(servicio.getTipo());
-				servi.setEncargado(servicio.getDias());
+				servi.setEncargado(servicio.getEncargado());
 				servi.setHorario(servicio.getHorario());
 				servi.setDias(servicio.getDias());
 				break;
