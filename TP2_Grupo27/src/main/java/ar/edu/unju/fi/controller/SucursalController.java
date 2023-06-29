@@ -16,7 +16,7 @@ import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/sucursales")
-public class sucursalesController {
+public class SucursalController {
 	
 	@Autowired
 	private Sucursal sucu;

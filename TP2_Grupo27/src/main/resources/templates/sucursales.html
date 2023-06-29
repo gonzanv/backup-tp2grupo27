@@ -11,20 +11,22 @@
 		
 		
 		<header th:replace="~{layouts/header :: header}"></header>
-		<div class="menuu">
+		<div class="menu">
 				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/Inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/inicio}">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejosalud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejos_salud/listado}">Consejos de salud</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
 						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contáctenos}">Contáctanos</a></li>
+						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contactanos}">Contáctanos</a></li>
 					</ul>
 				</nav>
 		</div>
 		<div class="container-fluid">
 			<div class="contenedor-paseos">
+				<h1 class="text-center">Sucursales</h1>
+				<p class="text-center">Puede consultar las distintas sucursales y su información en la siguiente tabla:</p>
 				<table border=1 class="table table-striped mx-auto">
 				<thead class="table-dark">
 					<tr>
@@ -53,7 +55,7 @@
 			</table>
 			</div>
 	        		<h4 class="mb-4">Para mas informacion contáctenos</h4>
-	    			<a th:href="@{/Inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
+	    			<a th:href="@{/inicio}" title="Haga click para volver a la página de inicio">🏠 Volver al inicio</a><p>
     	</div>
     						<footer th:replace="~{layouts/footer :: footer}"></footer>
     		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
