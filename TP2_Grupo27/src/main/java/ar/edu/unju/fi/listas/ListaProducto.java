@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import ar.edu.unju.fi.model.Producto;
 
 @Component
-public class ListaProductos {
+public class ListaProducto {
 	private List<Producto> productos;
 	
-	public ListaProductos(){
+	public ListaProducto(){
 		productos = new ArrayList<Producto>();
 		productos.add(new Producto("Bolso Transportador Liso MB",1,2999.99,"Bolsos",30,"/images/bolso1.jpg"));
 		productos.add(new Producto("Corral Hexagonal",2,1799.99,"Corrales",20,"/images/corral.png"));

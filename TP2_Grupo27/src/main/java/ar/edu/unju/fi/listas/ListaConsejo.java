@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import ar.edu.unju.fi.model.Consejo;
 
 @Component
-public class ListaConsejos {
+public class ListaConsejo {
 	private List<Consejo> consejos;
 	
-	public ListaConsejos() {
+	public ListaConsejo() {
 		consejos=new ArrayList<Consejo>();
 		consejos.add(new Consejo(1,"Visita regularmente al veterinario","El veterinario nos orientará y diseñará un plan de prevención de las innumerables enfermedades que atacan a los animales de compañía, enseñándonos a cuidar de la mejor manera posible a nuestro compañero.En la primera visita de nuestro perro o gato al veterinario, éste se encargará de revisar su estado de salud y descartar cualquier patología, además de establecer el plan vacunal y de escoger las vacunas más adecuadas para cada animal según el riesgo de exposición a ciertas enfermedades y la zona de residencia. Por este motivo no existe un calendario de vacunación único.","/images/salud1.jpg"));
 		consejos.add(new Consejo(2,"Desparasita con frecuencia a tu mascota","La desparasitación de las mascotas debe llevarse a cabo antes de iniciar el suministro de las vacuna, porque además de eliminar los parásitos, el antiparasitario estimula las defensas y ayuda a que la vacuna produzca un mejor efecto inmune en los animales.","/images/salud2.jpg"));

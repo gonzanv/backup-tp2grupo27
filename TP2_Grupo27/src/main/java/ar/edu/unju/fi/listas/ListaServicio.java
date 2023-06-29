@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import ar.edu.unju.fi.model.Servicio;
 
 @Component
-public class ListaServicios {
+public class ListaServicio {
 	private List<Servicio> servicios;
 	
-	public ListaServicios(){
+	public ListaServicio(){
 		servicios=new ArrayList<Servicio>();
 		servicios.add(new Servicio(1,"Paseador","Juan Perez","9 a 12 - 16 a 18","Lunes y Miercoles"));
 		servicios.add(new Servicio(2,"Paseador","Lucas Diaz","9 a 12 - 16 a 18","Martes y Viernes"));
