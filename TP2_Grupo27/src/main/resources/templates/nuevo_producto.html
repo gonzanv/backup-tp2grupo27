@@ -29,22 +29,32 @@
 				<div class="col-auto">
 				<input class="form-control" type="number" id="codigo" name="producto_codigo" th:field="*{codigo}" readonly>
 				</div> <p>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="nombre">Nombre</label>
 				<input class="form-control" type="text" id="nombre" name="producto_nombre" th:field="*{nombre}">
 				<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div>
-				<div class="col-auto">
-				<label class="col-form-label" for="categoria">Categoria</label>
-				<input class="form-control" type="text" id="categoria" name="producto_categoria" th:field="*{categoria}">
-				<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
+				<div class="col-2">
+				<label class="col-form-label" for="categoria">Categoría</label>
+					<select class="form-select" id="categoria" name="producto_categoria" th:field="*{categoria}">
+						<option selected value="">Seleccione una Categoría</option>
+				    	<option value="Transportadores">Transportadores</option>
+				    	<option value="Alimentos">Alimentos</option>
+				    	<option value="Camas">Camas</option>
+				    	<option value="Corrales">Corrales</option>
+				    	<option value="Vestimenta">Vestimenta</option>
+				    	<option value="Higiene">Higiene</option>
+				    	<option value="Accsesorios">Accesorios</option>
+				    	<option value="Juguetes">Juguetes</option>
+					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				</div> <p>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="precio">Precio</label>
 				<input class="form-control" type="number" step="0.01" id="precio" name="producto_precio" th:field="*{precio}">
 				<div class="text-danger" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
 				</div>
-				<div class="col-auto">
+				<div class="col-2">
 				<label class="col-form-label" for="descuento">Porcentaje de Descuento</label>
 				<input class="form-control" type="number" id="descuento" name="producto_descuento" th:field="*{descuento}">
 				<div class="text-danger" th:if="${#fields.hasErrors('descuento')}" th:errors="*{descuento}"></div>
