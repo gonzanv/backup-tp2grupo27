@@ -6,26 +6,22 @@
 		<title>Inicio</title>
 		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 		<link th:href="@{/css/estilos.css}" rel="stylesheet"/>
+		<link rel="shortcut icon" type="image" th:href="@{/images/icon.png}">
 	</head>
 	<body>
 		<div class="contenedor-index">
 			<header th:replace="~{layouts/header :: header}"></header>
-			<div class="menu">
-				<nav class="navbar navbar-expand-lg bg-dark m-0 p-0">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/inicio}">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/productos/listado}">Productos</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/consejos_salud/listado}">Consejos de salud</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/servicios/listado}">Servicios</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/sucursales/listado}">Sucursales</a></li>
-						<li class="nav-item"><a class="nav-link active text-light p-3" th:href="@{/contactanos}">Contáctanos</a></li>
-					</ul>
-				</nav>
+			<div class="portada">
+	    			<h1 class="position-relative top-50 start-50 translate-middle">Tu tienda y cuidadores de confianza para el bienestar de tu
+					compañero canino: Grupo 27</h1>
+					<p class="position-relative top-50 start-50 translate-middle">Tenemos a la venta de productos relacionados con el cuidado y
+					bienestar de las mascotas. Aquí se pueden encontrar alimentos,
+					juguetes, accesorios, productos de higiene, entre otros.</p>
 			</div>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-9">
-						<section>
+						<section class="py-4">
 							<article>
 								<h2>Paseador de perros profesional: La mejor opción para el
 									cuidado de tu mascota</h2>

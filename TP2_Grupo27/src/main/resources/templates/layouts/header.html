@@ -7,11 +7,22 @@
 	</head>
 	<body>
 		<header th:fragment="header">
-	    			<h1 class="position-relative top-50 start-50 translate-middle">Tu tienda y cuidadores de confianza para el bienestar de tu
-					compañero canino: Grupo 27</h1>
-					<p class="position-relative top-50 start-50 translate-middle">Tenemos a la venta de productos relacionados con el cuidado y
-					bienestar de las mascotas. Aquí se pueden encontrar alimentos,
-					juguetes, accesorios, productos de higiene, entre otros.</p>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-1 py-0">
+			  <a class="navbar-brand" th:href="@{/inicio}">
+			    <img th:src="@{/images/logo.png}" width="40" height="40" class="d-inline-block align-middle" alt="">
+			    Grupo 27
+			  </a>
+			  <div class="collapse navbar-collapse justify-content-end px-2" id="navbarNav">
+			    <ul class="navbar-nav">
+			    	    <li class="nav-item"><a class="nav-link" th:href="@{/inicio}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/productos/listado}">Productos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/consejos_salud/listado}">Consejos de salud</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/servicios/listado}">Servicios</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/sucursales/listado}">Sucursales</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/contactanos}">Contáctanos</a></li>
+			    </ul>
+ 			 </div>
+</nav>
 		</header>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>
