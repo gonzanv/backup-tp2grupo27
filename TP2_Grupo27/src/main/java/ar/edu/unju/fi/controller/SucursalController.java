@@ -76,8 +76,16 @@ public class SucursalController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarServicio(@ModelAttribute("sucursal")Sucursal sucursal)
+	public ModelAndView modificarServicio(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result)
 	{
+		ModelAndView modelView = new ModelAndView("redirect:/sucursales/listado");
+		if(result.hasErrors())
+		{
+			modelView.setViewName("nueva_sucursal");
+			modelView.addObject("producto",sucursal);
+			modelView.addObject("edicion",true);
+			return modelView;
+		}
 		for(Sucursal sucu:listasucursales.getSucursales()) {
 			if(sucu.getId()==sucursal.getId())
 			{
@@ -88,7 +96,7 @@ public class SucursalController {
 				break;
 			}
 		}
-		return "redirect:/sucursales/listado";
+		return modelView;
 	}
 	
 	@GetMapping("/eliminar/{id}")

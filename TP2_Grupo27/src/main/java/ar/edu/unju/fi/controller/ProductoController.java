@@ -77,8 +77,16 @@ public class ProductoController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarProducto(@ModelAttribute("producto")Producto producto)
+	public ModelAndView modificarProducto(@Valid @ModelAttribute("producto")Producto producto, BindingResult result)
 	{
+		ModelAndView modelView = new ModelAndView("redirect:/productos/listado");
+		if(result.hasErrors())
+		{
+			modelView.setViewName("nuevo_producto");
+			modelView.addObject("producto",producto);
+			modelView.addObject("edicion",true);
+			return modelView;
+		}
 		for(Producto produ:listaproductos.getProductos()) {
 			if(produ.getCodigo()==producto.getCodigo())
 			{
@@ -90,7 +98,7 @@ public class ProductoController {
 				break;
 			}
 		}
-		return "redirect:/productos/listado";
+		return modelView;
 	}
 	
 	@GetMapping("/eliminar/{codigo}")

@@ -75,8 +75,16 @@ public class ConsejoSaludController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarConsejo(@ModelAttribute("consejo")Consejo consejo)
+	public ModelAndView modificarConsejo(@Valid @ModelAttribute("consejo")Consejo consejo, BindingResult result)
 	{
+		ModelAndView modelView = new ModelAndView("redirect:/consejos_salud/listado");
+		if(result.hasErrors())
+		{
+			modelView.setViewName("nuevo_consejo");
+			modelView.addObject("consejo",consejo);
+			modelView.addObject("edicion",true);
+			return modelView;
+		}
 		for(Consejo conse:listaconsejos.getConsejos()) {
 			if(conse.getId()==consejo.getId())
 			{
@@ -86,7 +94,7 @@ public class ConsejoSaludController {
 				break;
 			}
 		}
-		return "redirect:/consejos_salud/listado";
+		return modelView;
 	}
 	
 	@GetMapping("/eliminar/{id}")
