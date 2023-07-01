@@ -75,8 +75,16 @@ public class ServicioController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarServicio(@ModelAttribute("servicio")Servicio servicio)
+	public ModelAndView modificarServicio(@Valid @ModelAttribute("servicio")Servicio servicio, BindingResult result)
 	{
+		ModelAndView modelView = new ModelAndView("redirect:/servicios/listado");
+		if(result.hasErrors())
+		{
+			modelView.setViewName("nuevo_servicio");
+			modelView.addObject("servicio",servicio);
+			modelView.addObject("edicion",true);
+			return modelView;
+		}
 		for(Servicio servi:listaservicios.getServicios()) {
 			if(servi.getId()==servicio.getId())
 			{
@@ -87,7 +95,7 @@ public class ServicioController {
 				break;
 			}
 		}
-		return "redirect:/servicios/listado";
+		return modelView;
 	}
 	
 	@GetMapping("/eliminar/{id}")
