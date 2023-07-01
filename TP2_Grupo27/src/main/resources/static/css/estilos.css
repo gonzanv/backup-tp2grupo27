@@ -13,7 +13,7 @@ body{
 	background-color:#ffffcc;
 	text-align: justify;
 }
-header{
+.portada{
 	text-align:center;
 	background-image:url("../images/Portada2.jpg");
 	padding:12%;
@@ -21,26 +21,27 @@ header{
 	height:100px;
 	color:white;
 }
-header h1{
+.portada h1{
 	font-size:43px;
 	-webkit-text-stroke: 1px black;
 	text-shadow: 1px 1px 2px black;
 	font-family: impact,rockwell;
 	padding-bottom:8px;
 }
-header p{
+.portada p{
 	font-style:italic;
 	font-weight: bold;
 	padding-top:0px;
 	font-size:16.4px;
 	text-shadow: 1px 1px 2px black;
 }
+
 nav a:link,nav a:visited,nav a:active {
     text-decoration:none;
 }
 nav a:hover{
-	background-color: #4e7381; 
-}
+	text-decoration:none;
+} 
 section{
 	padding-top:20px;
 	display:inline-block;
@@ -92,13 +93,13 @@ th{
 .contenedor-paseos p,.contenedor-paseos h1{
 	padding:7px;
 }
-**/
+
 .a {
   background-color: powderblue;
   transition: background-color .5s;
 }
-
-a:hover {
+**/
+.link:hover {
   background-color: gold;
 }
 h2,h1{
